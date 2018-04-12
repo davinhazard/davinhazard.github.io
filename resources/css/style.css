@@ -216,6 +216,7 @@ be causing the white space at the end? no visibility instead
 
 .landing-background {
 	width: 100%;
+	height: auto;
 	/*height: 90vh;*/
 	background-image: url("../images/gifs/mobile-background-animation.gif");
 	background-size: contain;
