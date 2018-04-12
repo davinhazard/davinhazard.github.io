@@ -224,7 +224,7 @@ be causing the white space at the end? no visibility instead
   	-moz-background-size: contain;
 	/*background-position: 50% 50%; */
 	background-repeat: no-repeat;
-	background-attachment: fixed;
+	/*background-attachment: fixed;*/
 	/*height: 600px; vh is viewport height percentage*/
 	
 	/*display: flex;
@@ -241,6 +241,7 @@ be causing the white space at the end? no visibility instead
 	.landing-background {
 		background-image: url("../images/gifs/background-animation.gif");
 		background-size: cover;
+		background-attachment: fixed;
 		padding-bottom: 100px;
 	}
 }
