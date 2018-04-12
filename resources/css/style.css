@@ -225,8 +225,8 @@ be causing the white space at the end? no visibility instead
 	/*display: flex;
 	align-items: center;
 	justify-content: space-around;*/
-	padding-top: 50px;
-	padding-bottom: 100px;
+	padding-top: 76px;
+	/*padding-bottom: 100px;*/
 	box-sizing: padding-box;
 	z-index: 0;
 	background-attachment: fixed;
@@ -236,6 +236,8 @@ be causing the white space at the end? no visibility instead
 @media screen and (min-width: 600px) {
 	.landing-background {
 		background-image: url("../images/gifs/background-animation.gif");
+		background-size: cover;
+		padding-bottom: 100px;
 	}
 }
 
