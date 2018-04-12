@@ -1,0 +1,455 @@
+@font-face {
+	font-family: apercu;
+	src: ../fonts/Apercu.otf;
+}
+
+html {
+	-moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+	font-size: 100%;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Source Sans Pro', apercu, 'Work Sans', Helvetica;
+	/*border: 25px solid rgba(225, 225, 225, 0.5);
+	padding: 25px;*/
+	min-height: 100vh;
+	box-sizing: border-box;
+}
+
+strong { 
+	font-weight: bold; 
+}
+
+cite { 
+    font-style: italic;
+}
+
+/*
+h1 {
+	display: block;
+    font-size: 2rem;
+    margin-top: 0.67rem;
+    margin-bottom: 0.67rem;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+h3 { 
+    display: block;
+    font-size: 1.17rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+h4 { 
+    display: block;
+    font-size: 1rem;
+    margin-top: 1.33rem;
+    margin-bottom: 1.33em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+*/
+h5 { 
+    display: block;
+    font-size: .83em;
+    /*margin-top: 1.67em;
+    margin-bottom: 1.67em;*/
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+/*
+p {
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+*/
+header {
+	display: flex;
+	width: 100%;
+	position: fixed;
+	z-index: 10;
+	background-color: white;
+	padding-top: 20px;
+	padding-left: 20px;
+	padding-bottom: 20px;
+	justify-content: space-between;
+	box-sizing: border-box;
+	align-items: baseline;
+}
+
+#main-title {
+	font-size: 1.25rem;
+	color: #404040;
+}
+
+nav {
+	white-space: nowrap;
+}
+
+header nav a {
+	color: gray;
+	padding: 4px;
+	font-size: 16px;
+}
+
+header nav a:hover {
+	color: #202020;
+}
+
+a:link {
+	text-decoration: none;
+}
+
+.description{
+	padding-top: 1.75em;
+	padding-bottom: 1.75em;
+}
+
+.full-nav-bar {
+	display: none;
+}
+
+.mobile-nav {
+	display: inline;
+	font-size: 30px;
+	font-style: bold;
+	vertical-align: middle;
+}
+
+.mobile-nav img {
+	width: 18px;
+}
+
+/*desktop styling*/
+@media screen and (min-width: 600px) {
+	header {
+		padding-left: 40px;
+	}
+
+	#main-title {
+		font-size: 36px;
+	}
+
+	header nav a {
+	padding: 8px;
+	font-size: 18px;
+	}
+
+	.full-nav-bar {
+		display: inline;
+	}
+
+	.mobile-nav {
+		display: none;
+	}
+}
+/*
+#close-button {
+  display: block;
+  position: absolute;
+  right: 50px;
+  top: 50px;
+  width: 30px;
+  height: 30px;
+}
+
+#close-button span {
+  background: #777;
+  width: 30px;
+  height: 6px;
+  display: block;
+  position: absolute;
+  top: 14px;
+}
+
+#close-button:hover span {
+	background: #333;
+}
+
+.x-1 {
+  transform: rotate(45deg);
+}
+
+.x-2 {
+  transform: rotate(-45deg);
+}
+*/
+#about {
+	padding-top: 112px;
+	padding-bottom: 50px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center; 
+	background-color: rgb(150, 150, 150);
+	margin-left: 0;
+	margin-right: 0;
+	width: 100%;
+	/*min-height: 100vh;*/
+	min-height: 85vh;
+}
+
+#about img {
+	margin: 1.75em;
+	width: 50%;
+	height: auto;
+	border-radius: 50%;
+	border: solid rgb(255, 219, 150) 7px;
+	
+}
+
+#about .title {
+	font-size: 30px;
+	font-size: 1.875rem;
+	margin-bottom: 1em;
+	font-weight: bold;
+}
+
+#about .subtitle {
+	font-size: 24px;
+	font-size: 1.5rem;
+	margin-bottom: 0.75em;
+	font-weight: bold;
+}
+
+#about-text {
+	width: 75%;
+	color: white;
+	text-align: center;
+}
+
+#about p {
+	/*font-size: 1.25rem;
+	line-height: */
+	margin-bottom: 1.75em;
+	font-size: 17px;
+    font-size: 1.0625rem;
+    line-height: 26px;
+    line-height: 1.625rem;
+}
+
+#about p:last-child {
+	margin-bottom: 0;
+}
+
+#about a {
+	color: rgb(107, 185, 254);
+}
+
+#about a:hover, #about a:active {
+	color: rgb(255, 147, 74);
+}
+
+/*desktop styling - changed from 600 to 640
+to account for header wrapping causing cutoff */
+@media screen and (min-width: 640px) {
+	#about {
+		padding-top: 76px;
+		padding-bottom: 0;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	#about img{
+		width: 25%;
+		/*top right bottom left*/
+		margin: 0 5% 0 12.5%;
+	}
+
+	#about #about-text {
+		text-align: left;
+		width: 40%;
+		/*padding:20px;
+		padding-right: 10%;*/
+		margin-right: 12.5%;
+	}
+}
+
+/*
+img {
+	width: 100%;
+	position: relative;
+	box-sizing: border-box;
+	align-self: center;
+}
+*/
+
+.content {
+	width: 75%;
+	margin: auto;
+	padding-top: 50px;
+	text-align:center;
+}
+
+.content .title {
+	font-size: 1.875rem;
+	margin-bottom: 1em;
+	text-align: left;
+}
+
+.row {
+	width: 100%;
+	text-align: right;
+	margin-right: 10%;
+}
+
+@media screen and (min-width: 600px) {
+	.row {
+		margin: auto;
+	}
+
+	.row.dropdown * {
+		display: inline-block;
+	}
+}
+
+/*
+img.full-width{
+	padding: 75px;
+}
+*/
+.description {
+	font-size: 1em;
+}
+/*
+.content {
+	display: flex;
+	flex-wrap: wrap;
+	margin: auto;
+}
+*/
+/*
+.content p {
+	font-size: 18px;
+	line-height: 24px;
+	text-align: left;
+	padding-bottom: 24px;
+}
+*/
+.content p {
+	font-size: 13px;
+    font-size: 0.8125rem;
+    line-height: 18px;
+    line-height: 1.125rem;
+    font-weight: 400;
+    font-style: normal;
+    text-align: left;
+    max-width: 570px;
+    /* CONSIDER: same max width as images? 
+    max-width: 75vh; */
+    margin-bottom: 1.75em;
+}
+.content h3 {
+	text-align: left;
+}
+
+figure {
+	margin: 1.75em 0;
+}
+
+img {
+	width: 100%;
+	/*max-width: 550px;*/
+	height: 100%;
+	/*max-height: 85vh;*/
+	object-fit: contain;
+}
+
+/* scale portrait images to fit into viewport */
+.portrait img, 
+video.portrait {
+	max-height: 85vh;
+}
+/*
+.image-to-gif {
+	max-height: 75vh;
+}
+*/
+figcaption {
+	color: rgb(150, 150, 150);
+}
+
+/*specific to vr styling - only play gifs when they
+are fully in viewport*/
+
+#transport-gif {
+	background-image: url("../images/gifs/transport-600-px.gif");
+	background-size: contain;
+	background-repeat: no-repeat;
+	/*max-height: 85vh;*/
+}
+
+#bubble-pop-gif {
+	background-image: url("../images/gifs/bubble-pop-570-px.gif");
+	background-size: contain;	
+	background-repeat: no-repeat;
+}
+
+figure .hide-image {
+	opacity: 0;
+}
+
+/*
+img.image-to-gif {
+	width: 100%;
+	height: auto;
+}
+*/
+
+/* desktop styling */
+@media screen and (min-width: 600px) {
+	.content {
+		width: 80%;
+	}
+
+/* get rid of .section?? redundant - add styling to paragraphs */
+	.content p, .content .title {
+		margin-left: 15%;
+		box-sizing: border-box;
+	}
+
+	.content p {
+		font-size: 17px;
+    	font-size: 1.0625rem;
+    	line-height: 26px;
+    	line-height: 1.625rem;
+	}
+
+	/* by default figure is aligned with text paragraphs with
+	max width of 570px */
+	figure {
+		margin-left: 15%;
+		max-width: 570px;
+	}
+
+	figure.fit-screen-width {
+		/* PROBLEM-SOLVED: adjusts for square img-to-gifs
+		to always fit in screen */
+		max-width: 75vh;
+	}
+
+	figure.full-width {
+		max-width: 100%;
+	}
+
+	.full-width img {
+		max-height: 85vh;
+	}
+
+}

@@ -1,0 +1,764 @@
+@font-face {
+	font-family: apercu;
+	src: ../fonts/Apercu.otf;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Source Sans Pro', apercu,'Work Sans', sans-serif;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	overflow-x: hidden;
+}
+
+h1 {
+	display: block;
+    font-size: 2em;
+    /*margin-top: 0.67em;*/
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+h3 {
+	font-weight: bold;
+	font-size: 1.5em;
+	color: #404040;
+}
+
+p {
+	line-height: 1.5;
+}
+
+header {
+	display: flex;
+	width: 100%;
+	position: fixed;
+	z-index: 10;
+	background-color: white;
+	padding: 20px 20px;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#logo span{
+	font-size: 28px;
+	font-size: 1.75rem;
+	color: #404040;
+	white-space: nowrap;
+	/*padding: 0px 40px;*/
+}
+
+header nav {
+	align-items: bottom;
+	/*padding-right: 40px;*/
+	padding-top: 10px;
+}
+
+header nav a {
+	color: #606060;
+	padding: 8px;
+	font-size: 18px;
+}
+
+header nav a:hover {
+	/*color: #202020;*/
+	color: rgb(211, 125, 132);
+}
+
+a:link  {
+	text-decoration: none;
+}
+
+/*don't show regular nav bar in mobile*/
+@media screen and (max-width: 600px) {
+	header nav {
+		display:none;
+	}
+}
+
+/* desktop header styling */
+@media screen and (min-width: 600px) {
+	#logo span {
+		font-size: 36px;
+		padding-left: 20px;
+	}
+
+	header nav {
+		padding-right: 40px;
+	}
+}
+
+#hamburger {
+	align-items: bottom;
+	padding-right: 40px;
+	cursor: pointer;
+	position: relative;
+}
+#hamburger .line{
+	width: 30px;
+	height: 4px;
+	background-color: gray;
+	margin: 6px 0;
+	transition: 0.4s;
+}
+
+#hamburger:hover .line {
+	background-color: #202020;
+}
+
+/*Animate from hamburger icon to x icon when clicked*/
+
+/* Rotate first bar */
+.change .line.first {
+	-webkit-transform-origin: center;
+    transform-origin: 50% 50%;
+    -webkit-transform: translateY(10px) rotate(-45deg); ;
+    transform: translateY(10px) rotate(-45deg);
+}
+
+/* Fade out the second bar */
+.change .line.second {
+    opacity: 0;
+}
+
+/* Rotate last bar */
+.change .line.third {
+	-webkit-transform-origin: center;
+	transform-origin: 50% 50%;
+    -webkit-transform: translateY(-10px) rotate(45deg);
+    transform: translateY(-10px) rotate(45deg);
+}
+
+/*dropdown menu positioning is absolute and positioned
+76px (height of header) below top of viewport*/
+#dropdown {
+	display: none;
+	position: absolute;
+	top: 76px;
+	background-color: white;
+	width: 100%;
+	/* to adjust for header's padding */
+	margin: -20px;
+	text-align: center;
+	z-index: 10;
+}
+
+#dropdown li:first {
+	border-top: 1px solid #707070;
+}
+
+#dropdown li {
+	box-sizing: border-box;
+	padding: 12px 0px;
+	/*accounts for margin adjustment for header to
+	center items */
+	padding-right: 20px;
+	/*border-bottom: 0.25px solid #707070;*/
+	box-shadow: 0px 0.5px 0px #707070;
+}
+
+#dropdown a {
+	font-size: 18px;
+	color: gray;
+}
+
+#dropdown a:link {
+	text-decoration: none;
+}
+
+#dropdown a:hover,
+#dropdown a:active {
+	/*color: #202020;*/
+	color: rgb(211, 125, 132);
+}
+/*
+#dropdown li a:active {
+	background-color: rgb(150, 150, 150);
+	color: white;
+}
+*/
+#dropdown.show {
+	display: block;
+}
+
+/*don't show hamburger dropdown in desktop*/
+@media screen and (min-width: 600px) {
+	#hamburger {
+		display: none;
+	}
+
+}
+
+
+/* removed main relative positioning;
+-question about padding between work elements and
+within elements-shifts tiles up when bottom padding added;
+-also wonder why max height and max width for item no longer
+set dimensions...
+-last how to flex shrink while maintaining square ratio
+-another thought: could 0 opacity of hidden elements
+be causing the white space at the end? no visibility instead
+-need to do px to em or % conversions
+-add media queries and browser compatibilities;
+-should items be flex or relative with absolute titles
+-flex seems easier
+-why does * not work after reset sheet
+-
+*/
+#main {
+	z-index: 5;
+	position: relative;
+}
+
+.landing-background {
+	background-image: url("../images/gifs/mobile-background-animation.gif");
+	background-size: cover;
+	/*background-position: 50% 50%; */
+	background-repeat: no-repeat;
+	/*height: 600px; vh is viewport height percentage*/
+	height: 90vh;
+	width: 100%;
+	/*display: flex;
+	align-items: center;
+	justify-content: space-around;*/
+	padding-top: 50px;
+	padding-bottom: 100px;
+	box-sizing: padding-box;
+	z-index: 0;
+	background-attachment: fixed;
+}
+
+/* desktop background */
+@media screen and (min-width: 600px) {
+	.landing-background {
+		background-image: url("../images/gifs/background-animation.gif");
+	}
+}
+
+
+/* about section spans full width of screen
+but to align image and text with 80% width of 
+work section below, added 10% margin-left to image
+and 10% padding-right to text and justified
+with space-between instead of around */
+
+#about {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center; 
+	background-color: rgb(150, 150, 150);
+	margin-left: 0;
+	margin-right: 0;
+	width: 100%;
+	min-height: 100vh;
+}
+
+#about img {
+	width: 50%;
+	height: auto;
+	border-radius: 50%;
+	border: solid rgb(255, 219, 150) 7px;
+	margin-top: 10%;
+	margin-bottom: 5%;	
+}
+
+/* note: originally text was 22px; changed
+to 1.5em but 4vmin seems to look good at 
+different browser sizes - further testing
+needed */
+
+#about-title {
+	display: block;
+    font-size: 2em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+#about #about-text {
+	width: 75%;
+	color: white;
+	/*font-size: 4vmin;*/
+	font-size: 16px;
+	font-size: 1rem;
+	text-align: center;
+	margin-bottom: 10%;
+}
+
+#about-text a {
+	color: lightblue;
+}
+
+#about-text a:link {
+	text-decoration: none;
+}
+
+#about-text a:hover,
+#about-text a:active {
+	/*color: #202020;*/
+	color: rgb(255, 219, 150);
+}
+
+/*desktop styling */
+@media screen and (min-width: 600px) {
+	#about {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+
+	#about img{
+		width: 25%;
+		max-width: 264px;
+		margin: 0px;
+		margin-left: 10%;
+	}
+
+	#about #about-text {
+		font-size: 22px;
+		font-size: 1.375rem;
+		text-align: left;
+		width: 50%;
+		padding:20px;
+		padding-right: 10%;
+		margin-bottom: 0px;
+	}
+}
+
+/* mobile screens less than 350px */
+@media screen and (max-width: 350px) {
+	#about #about-text {
+		font-size: 14px;
+		font-size: 0.875rem;
+	}
+}
+
+#work {
+	width: 80%;
+	margin: auto;
+	padding-top: 100px;
+	/*padding-left: 60px;
+	padding-right: 60px;*/
+	padding-bottom: 50px;
+	text-align: center;
+}
+
+.tab {
+	width: 100%;
+	margin: auto;
+	text-align: center;
+	padding: 3px 0px;
+	/*margin-bottom: 25px;*/
+}
+
+/* tabs displayed centered vertically 
+in mobile; same width as .items */
+.tab button {
+	width: 75%;
+	margin: auto;
+	font-size: 1.5em;
+	background-color: white;
+	border: none;
+	font-family: inherit;
+	color: #606060;
+	border: 3px solid white;
+}
+
+/* desktop styling */ 
+@media screen and (min-width: 600px) {
+	#work {
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
+	.tab {
+		margin-bottom: 50px;
+	}
+	.tab button {
+		width: 31%;
+		margin: 0.5%;
+		font-size: 32px;
+		font-size: 2rem;
+	}
+}
+
+#dev-button:hover {
+	border: 3px solid rgb(211, 125, 132);
+}
+
+#design-button:hover {
+	border: 3px solid rgb(255, 147, 74);
+}
+
+#art-button:hover {
+	border: 3px solid rgb(107, 185, 254);
+}
+
+.tab button.selected {
+	background-color: rgb(150, 150, 150);
+	color: white;
+	border: 3px solid white;
+	outline: none;
+}
+
+#work h3 {
+	padding-left: 0.375em;
+}
+
+button#view-all {
+	padding-top: 50px;
+	/*width: 20%;*/
+	/*margin: 0% 40%;*/
+	text-align: center;
+	font-family: inherit;
+	font-size: 18px;
+	/*color: grey;*/
+	color: #606060;
+	cursor: pointer;
+	background-color: white;
+	border: none;
+	outline: none;
+}
+
+button#view-all:hover {
+	/*color: #222;*/
+	color: rgb(255, 147, 74);
+}
+
+.item {
+	position: relative;
+	display: block;
+	width: 75%;
+	margin: 12.5%;
+	box-sizing: border-box;
+}
+
+.item img {
+	object-fit: cover;
+}
+
+.tabcontent .item:last-child {
+	margin-bottom: 0;
+}
+
+.tabcontent {
+	width: 100%;
+	text-align: center;
+	margin: auto;
+	display: none;
+}
+
+/* developer tab (first tab) selected/displayed
+by default */
+
+#developer-items.tabcontent{
+	display: inline-block;
+}
+
+.preview-image {
+	width: 100%;
+	height: auto;
+	object-fit: contain;
+	transition: opacity 0.5s ease;
+	-ms-transition: opacity 0.5s ease;
+}
+
+/* desktop styling */
+@media screen and (min-width: 600px) {
+	.row {
+		margin: auto;
+		padding-top: 2em;
+		padding-bottom: 4em;
+	}
+
+	.item {
+		display: inline-block;
+		width: 31%;
+		margin: 0.5%;
+	}
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transition: 0.75s ease-in-out;
+	-ms-transition: 0.75s ease-in-out;
+	-webkit-transition: 0.75s ease-in-out;
+	background-color: rgb(177, 177, 177);
+}
+
+#developer-items .overlay {
+	background-color: rgb(211, 125, 132);
+}
+
+#designer-items .overlay {
+	background-color: rgb(255, 147, 74);
+}
+
+#artist-items .overlay {
+	background-color: rgb(107, 185, 254);
+}
+
+.item .title {
+	color: white;
+	font-size: 1.25rem;
+	line-height: 1.5rem;
+	width: 75%;
+	position: absolute;
+	z-index: 100;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	text-align: center;
+	opacity: 0; 
+}
+
+/* screens > 350px */
+@media screen and (min-width: 350px) {
+	.item .title {
+		font-size: 1.5em;
+		line-height: 1.25em;
+	}
+}
+
+/* when clicked */
+.item:active .overlay {
+	opacity: 1;
+}
+
+/* on mobile screens, animate overlay & title when item
+is fully in window */
+@media screen and (max-width: 600px) {
+	
+	.animate-on-scroll {
+		opacity: 0.5;
+	}
+
+
+	.item .show-title {
+		opacity: 1;
+	}
+}
+
+/* on desktop, show item title and color overlay
+on hover */
+@media screen and (min-width: 600px) {
+	.item:hover .overlay {
+		opacity: 0.75;
+	}
+	/* when clicked */
+	.item:active .overlay {
+		opacity: 1;
+	}
+
+	.item .title {
+		opacity: 0;
+	}
+
+	.item:hover .title {
+		opacity: 1;
+	}
+
+}
+
+/* set all .item icon background-images here to show when 
+hovered over or scrolled past in mobile; most set to gifs,
+others the same as the preview-image but can be changed easily
+in the future */
+#vr-icon {
+	background-image: url("../images/gifs/hi-res-bubble-pop.gif");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+#android-icon {
+	background-image: url("../images/icons/app-icon.jpg");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+
+#animation-icon {
+	background-image: url("../images/gifs/mocap_dance.gif");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+#product-icon {
+	background-image: url("../images/gifs/color-changing-sleeve.gif");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+#typography-icon {
+	background-image: url("../images/icons/typography-icon.jpg");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+#painting-icon {
+	background-image: url("../images/icons/windmills.jpg");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+#digital-icon {
+	background-image: url("../images/gifs/flower&thebee.gif");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+#modeling-icon {
+	background-image: url("../images/gifs/slippery-frog.gif");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+}
+
+/*mobile : background is set to gif and when 
+item is fully in screen, .show-gif is toggled
+on img - opacity is set to 0
+revealing gif underneath */
+
+@media screen and (max-width: 600px) {
+	/*#animation-icon .show-gif {
+		opacity: 0;
+	}*/
+	.show-gif {
+	opacity: 0;
+}
+}
+
+/* desktop styling : show background image (preview gif)
+ on hover */
+@media screen and (min-width: 600px) {
+	.item:hover .preview-image {
+		opacity: 0;
+	}
+}
+
+footer {
+	padding: 20px 0px;
+	background-color: rgb(150, 150, 150);
+	color: white;
+	font-size: 1em;
+	line-height: 1.5em;
+	text-align: center;
+}
+
+footer h3 {
+	color: white;
+}
+
+#contact-links {
+	padding-top: 1.5em;
+	padding-bottom: 1.5em;
+}
+
+.link {
+	display: inline-block;
+	height: 34px;
+	padding-left: 10px;
+	padding-right: 10px;
+	vertical-align: bottom;
+}
+
+.link a {
+	display: inline-block;
+	height: 100%;
+}
+
+.link img {
+	object-fit: contain;
+}
+
+/* Email popup box container */
+.popup {
+	position: relative;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+/* Popup with text */
+.popup .popuptext {
+	visibility: hidden;
+	width: 160px;
+	font-size: 14px;
+	background-color: #555;
+	color: #fff;
+	text-align: center;
+	border-radius: 6px;
+	padding: 8px 16px;
+	position: absolute;
+	z-index: 1;
+	bottom: 100%;
+	left: 27%;
+	/*right: -91%;*/
+	margin-left: -80px;
+}
+
+/* popup arrow */
+.popup .popuptext::after {
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: #555 transparent transparent transparent;
+}
+
+/* toggle this class - hide/show popup */
+.popup .show {
+	visibility: visible;
+	-webkit-animation: fadeIn 1s;
+	animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+footer #copyright {
+	color: white;
+	padding-top: 1em;
+	font-size: 16px;
+}
+
+/* desktop (screens > 350px) footer styling */
+@media screen and (min-width: 350px) {
+	.popup .popuptext {
+		padding: 8px 16px;
+		font-size: 16px;
+		font-size: 1rem;
+	}
+
+	#copyright {
+		font-size: 18px;
+	}
+}
+
+/* 
+** Transitions
+*/
+
+.item {
+  transition: opacity 200ms linear 320ms, transform 200ms ease-out 320ms;
+}

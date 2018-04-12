@@ -1,1 +1,174 @@
-Hello World
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117433509-1"></script>
+	<script>
+  		window.dataLayer = window.dataLayer || [];
+  		function gtag(){dataLayer.push(arguments);}
+ 		gtag('js', new Date());
+		gtag('config', 'UA-117433509-1');
+	</script>
+
+	<link rel="shortcut icon" href="favicon-no-background.ico" type="image/x-icon">
+
+	<title>Davin Hazard</title>
+	<link rel="stylesheet" type="text/css" href="resources/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="resources/css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<meta name="viewport" content="width=device-width">
+</head>
+<body>
+	<!--Header-->
+	<header id="header">
+	<!--Personal Logo-->
+		<div id="logo">
+		<span>DAVIN HAZARD</span>
+		</div>
+	<!--Nav Bar-->
+		<nav>
+			<span><a href="#about">About</a></span>
+			<span><a href="#work">Work</a></span>
+			<span><a href="#contact">Contact</a></span>
+		</nav>
+
+	<!-- Mobile Menu Icon -->
+		<div id="hamburger" class="" onclick="toggleMenu()">
+			<div class="line first"></div>
+			<div class="line second"></div>
+			<div class="line third"></div>
+		</div>
+	<!-- Mobile Menu Dropdown -->
+		<ul id="dropdown" class="">
+			<li><a href="#about" onclick="toggleMenu()">About</a></li>
+			<li><a href="#work" onclick="toggleMenu()">Work</a></li>
+			<li><a href="#contact" onclick="toggleMenu()">Contact</a></li>	
+		</ul>		
+	</header>
+
+
+<!--Work Preview Tiles-->
+	<div class="landing-background"></div>
+
+<!--Main Page Content-->
+	<div id="main">
+	<!--About Section-->
+		<div id="about">
+			<img src="resources/images/headshot.jpg">
+			<div id="about-text">
+				<div id="about-title">Hi! I'm Davin</div>
+				<p>I'm a recent graduate of the University of Pennsylvania where I earned a BSE in <a href="http://cg.cis.upenn.edu/dmd_program.html" target="_blank">Digital Media Design</a> and a minor in Fine Arts. I'm excited by the intersection of art, technology, and society, and I enjoy projects that involve both creative and technical problem-solving. I'm a developer, designer, and artist and have worked on a wide variety of projects from app development to making doodles and gifs! Check out some of my work below and <a href="#contact">reach out</a> for more information.
+				</p>
+			</div>
+		</div>
+	<!--Work Section-->
+		<div id="work">
+			<div class="tab">
+				<button id="dev-button" class="tablinks selected" onclick="openTab(event, 'developer-items')">DEVELOPER</button>
+				<button id="design-button" class="tablinks" onclick="openTab(event, 'designer-items')">DESIGNER</button>
+				<button id="art-button" class="tablinks" onclick="openTab(event, 'artist-items')">ARTIST</button>
+			</div>
+			<div class="tabcontent" id="developer-items">
+				<div class="item" id="vr-icon">
+					<img src="resources/images/icons/vr_still.png" class="preview-image"/>
+					<a href="vr.html">
+					<div class="overlay"></div>
+					<span class="title">VR Game</span>
+					</a>
+				</div>
+				<div class="item" id="android-icon">
+					<img src="resources/images/icons/app-icon.jpg" class="preview-image"/>
+					<a href="android-app.html">
+					<div class="overlay"></div>
+					<span class="title">Android App</span>
+					</a>
+				</div>
+				<div class="item" id="animation-icon">
+					<img src="resources/images/icons/mocap_still.jpg" class="preview-image"/>
+					<a href="animation.html">
+					<div class="overlay"></div>
+					<span class="title">Animation + Motion Capture</span>
+					</a>
+				</div>
+			</div>
+			<div class="tabcontent" id="designer-items">
+				<div class="item" id="product-icon">
+					<img src="resources/images/icons/prototype-still.jpg" class="preview-image"/>
+					<a href="product-design.html">
+					<div class="overlay"></div>
+					<span class="title">Product Design</span>
+					</a>
+				</div>
+				<div class="item" id="typography-icon">
+					<img src="resources/images/icons/typography-icon.jpg" class="preview-image"/>
+					<a href="typography.html">
+					<div class="overlay"></div>
+					<span class="title">Typography + Bookmaking</span>
+					</a>
+				</div>
+				<!-- Removing Logo + Graphic Design Section 
+				<div class="item" id="logo-icon">
+					<img src="resources/images/square_stock_5.jpg" class="preview-image"/>
+					<a href="vr.html">
+					<div class="overlay"></div>
+					<span class="title">Graphic + Logo Design</span>
+					</a>
+				</div>
+				-->
+			</div>
+			<div class="tabcontent" id="artist-items">
+				<div class="item" id="painting-icon">
+					<img src="resources/images/icons/windmills.jpg" class="preview-image"/>
+					<a href="art.html">
+					<div class="overlay" style=></div>
+					<span class="title">Painting + Drawing</span>
+					</a>
+				</div>
+				<div class="item" id="digital-icon">
+					<img src="resources/images/icons/flower-bee-icon.jpg" class="preview-image"/>
+					<a href="digital.html">
+					<div class="overlay"></div>
+					<span class="title">Digital + Pixel Art</span>
+					</a>
+				</div>
+				<div class="item" id="modeling-icon">
+					<img src="resources/images/icons/frog-model.jpg" class="preview-image"/>
+					<a href="modeling.html">
+					<div class="overlay"></div>
+					<span class="title">3D Modeling</span>
+					</a>
+				</div>
+			</div>
+
+			<button id="view-all" onclick="openTab(event, 'view-all')">View All Work</button>
+		</div>
+
+	<!--Footer-->
+		<footer id="contact">
+			<!--<div id="email"></div>-->
+			<div id="contact-links">
+				<div class="popup link" onclick="openEmailPopup()">
+					<img src="resources/images/icons/		email-icon-2.png">
+					<span class= "popuptext" id="email-popup"></span>
+				</div>
+				<span class="link" id="github"><a href="https://github.com/davinhazard" target="_blank"><img src="resources/images/icons/github_logo.png" ></a></span>
+				<span class="link" id="linkedin"><a href="https://www.linkedin.com/in/davinhazard/" target="_blank"><img src="resources/images/icons/linkedin_logo.png" ></a></span>
+			</div>
+				<p id="copyright">&copy Davin Hazard 2018</p>
+		</footer>
+	</div>
+
+<!-- JavaScript for animating portfolio items into open pages 
+	<script src="resources/js/transitionScript.js"></script>
+-->
+	<script src="resources/js/animateOnScroll.js"></script>
+	<!--<script src="resources/js/setEmail.js"></script>-->
+	<script src="resources/js/openEmailPopup.js"></script>
+	<script src="resources/js/openTab.js"></script>
+	<script src="resources/js/toggleMenuIcon.js"></script>
+
+</body>
+</html>
