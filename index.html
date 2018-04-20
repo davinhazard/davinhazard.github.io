@@ -30,9 +30,18 @@
 		</div>
 	<!--Nav Bar-->
 		<nav>
-			<span><a href="#about">About</a></span>
-			<span><a href="#work">Work</a></span>
-			<span><a href="#contact">Contact</a></span>
+			<a href="#about">About</a>
+			<div class="dropdown">
+				<button class="dropbtn">
+					<a href="#work">Work</a>
+				</button>
+				<div class="dropdown-content">
+					<a href="#developer-items">Developer</a>
+					<a href="#designer-items">Designer</a>
+					<a href="#artist-items">Artist</a>
+				</div>
+			</div>
+			<a href="#contact">Contact</a>
 		</nav>
 
 	<!-- Mobile Menu Icon -->
@@ -149,6 +158,8 @@
 	<!--Footer-->
 		<footer id="contact">
 			<!--<div id="email"></div>-->
+			<h3>CONTACT</h3>
+			<!--<p>Contact me through the links below</p>-->
 			<div id="contact-links">
 				<div class="popup link" onclick="openEmailPopup()">
 					<img src="resources/images/icons/		email-icon-2.png">

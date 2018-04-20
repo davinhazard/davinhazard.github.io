@@ -59,6 +59,7 @@ header nav {
 }
 
 header nav a {
+	display: inline;
 	color: #606060;
 	padding: 8px;
 	font-size: 18px;
@@ -658,7 +659,7 @@ revealing gif underneath */
 }
 
 footer {
-	padding: 20px 0px;
+	padding: 30px 0px;
 	background-color: rgb(150, 150, 150);
 	color: white;
 	font-size: 1em;
@@ -668,6 +669,9 @@ footer {
 
 footer h3 {
 	color: white;
+	font-size: 1.5rem;
+	font-weight: normal;
+	padding-bottom: 1.5rem;
 }
 
 #contact-links {
@@ -752,6 +756,11 @@ footer #copyright {
 
 /* desktop (screens > 350px) footer styling */
 @media screen and (min-width: 350px) {
+	footer h3 {
+		font-size: 32px;
+		font-size: 2rem;
+	}
+
 	.popup .popuptext {
 		padding: 8px 16px;
 		font-size: 16px;
