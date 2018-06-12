@@ -53,13 +53,14 @@ header {
 }
 
 header nav {
+	
+	display: inline;
 	align-items: bottom;
 	/*padding-right: 40px;*/
 	padding-top: 10px;
 }
 
 header nav a {
-	display: inline;
 	color: #606060;
 	padding: 8px;
 	font-size: 18px;
@@ -72,6 +73,10 @@ header nav a:hover {
 
 a:link  {
 	text-decoration: none;
+}
+
+.dropdown .dropdown-content {
+	display: none;
 }
 
 /*don't show regular nav bar in mobile*/
@@ -377,6 +382,7 @@ in mobile; same width as .items */
 	font-family: inherit;
 	color: #606060;
 	border: 3px solid white;
+	cursor: pointer;
 }
 
 /* desktop styling */ 
