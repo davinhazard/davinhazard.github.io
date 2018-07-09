@@ -244,9 +244,7 @@ be causing the white space at the end? no visibility instead
 }
 
 #background-still {
-	position: absolute;
-	z-index: -1000;
-	/*visibility: hidden;*/
+	display: none;
 }
 
 /* desktop background */
