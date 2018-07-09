@@ -243,6 +243,10 @@ be causing the white space at the end? no visibility instead
 	z-index: -10;
 }
 
+#background-still {
+	display: none;
+}
+
 /* desktop background */
 @media screen and (min-width: 600px) {
 	.landing-background {
